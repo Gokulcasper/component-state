@@ -6,18 +6,22 @@ const TableHeader = () => {
       <tr>
         <th>Name</th>
         <th>Job</th>
+        <th>Action</th>
       </tr>
     </thead>
   );
 };
 
 const TableBody = (props) => {
-  const { charactersData } = props;
+  const { charactersData, removeCharacter } = props;
   const tableData = charactersData.map((characters, index) => {
     return (
       <tr key={index}>
         <td>{characters.name}</td>
         <td>{characters.job}</td>
+        <td>
+          <button onClick={() => removeCharacter(index)}>Delete</button>
+        </td>
       </tr>
     );
   });
@@ -26,12 +30,14 @@ const TableBody = (props) => {
 
 class Table extends Component {
   render() {
-    // console.log(this.props.charactersData);
-    const { charactersData } = this.props;
+    const { charactersData, removeCharacter } = this.props;
     return (
       <table>
         <TableHeader />
-        <TableBody charactersData={charactersData} />
+        <TableBody
+          removeCharacter={removeCharacter}
+          charactersData={charactersData}
+        />
       </table>
     );
   }
