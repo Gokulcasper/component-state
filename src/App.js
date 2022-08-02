@@ -4,30 +4,29 @@ import Table from "./Table";
 
 class App extends Component {
   render() {
-    // const characters = [
-    //   {
-    //     name: "gokul",
-    //     job: "engineer",
-    //   },
-    //   {
-    //     name: "raj",
-    //     job: "Developer",
-    //   },
-    //   {
-    //     name: "mani",
-    //     job: "Dev",
-    //   },
-    //   {
-    //     name: "velu",
-    //     job: "Dev",
-    //   },
-    // ];
+    const characters = [
+      {
+        name: "raj",
+        job: "Developer",
+      },
+      {
+        name: "selva",
+        job: "Mech",
+      },
+      {
+        name: "suresh",
+        job: "service",
+      },
+      {
+        name: "vijay",
+        job: "engineer",
+      },
+    ];
 
     return (
       <div className="container">
         <h1>Table</h1>
-        {/* <Table charactersData={characters} /> */}
-        <Table />
+        <Table charactersData={characters} />
       </div>
     );
   }
